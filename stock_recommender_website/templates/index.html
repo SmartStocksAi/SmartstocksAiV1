@@ -1,1 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Top Stock Recommendations</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Stock</th>
+                <th>Moving Average</th>
+                <th>RSI</th>
+                <th>MACD</th>
+                <th>Volume</th>
+                <th>Bollinger Bands</th>
+                <th>Stochastic Oscillator</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in recommendations %}
+            <tr>
+                <td>{{ stock['Stock'] }}</td>
+                <td>{{ stock['Moving Average'] }}</td>
+                <td>{{ stock['RSI'] }}</td>
+                <td>{{ stock['MACD'] }}</td>
+                <td>{{ stock['Volume'] }}</td>
+                <td>{{ stock['Bollinger Bands'] }}</td>
+                <td>{{ stock['Stochastic Oscillator'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
 
